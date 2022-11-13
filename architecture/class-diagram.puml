@@ -1,0 +1,59 @@
+
+@startuml food-order
+class Customer {
+  _id: ID
+  fullName: String
+  email: String
+  password:String
+  address:String
+  phone:String
+  cart:Food
+  order:Order
+'   login();
+'   register();
+'   createOrder();
+'   updateOrder();
+'   deleteOrder();
+'   deleteOrderById();
+'   getAllRestaurant();
+'   getRestaurantById();
+}
+
+class Restaurant {
+  RestaurantID: ID  
+  name:String
+  address: String
+  phone: String
+  rating: Number
+  images:String
+  food:Food
+
+}
+
+class Food { 
+  FoodID: ID  
+  name:String
+  description:String
+  category: String
+  readyTime:Number
+  rating: Number
+  price:Number
+  images:Array
+}
+class Order { 
+  orderID:ID
+  items: Food
+  totalAmount:String
+  orderDate: Date
+  orderStatus: String 
+  waiting-preparing-onway-delivered-cancelled-failed
+}
+
+class Admin { 
+  _id:ID
+  email: String
+  password: String
+}
+
+
+@enduml
