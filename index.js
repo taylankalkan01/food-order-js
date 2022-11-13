@@ -3,6 +3,7 @@ require("dotenv").config();
 const compression = require("compression");
 const helmet = require("helmet");
 const cors = require("cors");
+const { connectDB } = require("./databases/mongoDB");
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 port = process.env.SERVER_PORT; // ||3000
-app.listen(port, () => {
+app.listen(port, async () => {
 	console.log(`port is running on ${port}`);
+	await connectDB();
 });
