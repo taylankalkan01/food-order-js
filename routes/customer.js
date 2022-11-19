@@ -23,7 +23,10 @@ router.delete(
 	"/customer/order/:id",
 	customerControllers.customerDeleteOrderById
 );
-router.get("/customer/customer", customerControllers.getAllRestaurant);
-router.get("/customer/customer/:name", customerControllers.getRestaurantByName);
+router.get("/customer/restaurant", customerControllers.getAllRestaurant);
+router.get(
+	"/customer/restaurant/:name",
+	customerControllers.getRestaurantByName
+);
 
 module.exports = router;
