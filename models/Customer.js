@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { Schema } = require("mongoose");
 
 const customerSchema = new mongoose.Schema(
 	{
@@ -24,7 +25,11 @@ const customerSchema = new mongoose.Schema(
 		},
 		cart: [
 			{
-				food: { type: Schema.Types.ObjectId, ref: "Food", required: true },
+				food: {
+					type: Schema.Types.ObjectId,
+					ref: "Food",
+					required: true,
+				},
 				qty: { type: Number, required: true },
 			},
 		],
