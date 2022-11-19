@@ -1,4 +1,5 @@
 const Customer = require("../../../models/Customer");
+const bcrypt = require("bcrypt");
 const loginValidation = require("../../../validations/customer/loginValidation");
 const generateAccessToken = require("../../../helpers/token/generateToken");
 
