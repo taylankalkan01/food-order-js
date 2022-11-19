@@ -11,12 +11,16 @@ class Customer {
   order:Order
 '   login();
 '   register();
+'   logout();
+'   updateEmail();
+'   updatePassword();
+'   deleteAccount();
 '   createOrder();
 '   updateOrder();
 '   deleteOrder();
 '   deleteOrderById();
 '   getAllRestaurant();
-'   getRestaurantById();
+'   getRestaurantByName();
 }
 
 class Restaurant {

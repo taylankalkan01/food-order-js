@@ -1,0 +1,15 @@
+module.exports = {
+	customerLogin: require("./auth/login"),
+	customerRegister: require("./auth/register"),
+	customerRegister: require("./auth/register"),
+	customerLogout: require("./auth/logout"),
+	customerUpdateEmail: require("./auth/updateEmail"),
+	customerUpdatePassword: require("./auth/updatePassword"),
+	customerDeleteAccount: require("./auth/deleteAccount"),
+	customerCreateOrder: require("./cart/createOrder"),
+	customerUpdateOrder: require("./cart/updateOrder"),
+	customerDeleteOrder: require("./cart/deleteOrder"),
+	customerDeleteOrderById: require("./cart/deleteOrderById"),
+	getAllRestaurant: require("./restaurant/getAllRestaurant"),
+	getRestaurantByName: require("./restaurant/getRestaurantByName"),
+};
