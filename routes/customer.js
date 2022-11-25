@@ -1,11 +1,13 @@
 const router = require("express").Router();
 const customerControllers = require("../controllers/customer/index");
+const verifyToken = require("../middlewares/VerifyToken");
 
 router.post("/auth/customer/login", customerControllers.customerLogin);
 router.post("/auth/customer/register", customerControllers.customerRegister);
 router.post("/auth/customer/logout", customerControllers.customerLogout);
 router.put(
 	"/auth/customer/update-email/:id",
+	verifyToken,
 	customerControllers.customerUpdateEmail
 );
 router.put(
