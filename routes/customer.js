@@ -11,7 +11,8 @@ router.put(
 	customerControllers.customerUpdateEmail
 );
 router.put(
-	"/auth/customer/update-password",
+	"/auth/customer/update-password/:id",
+	verifyToken,
 	customerControllers.customerUpdatePassword
 );
 router.delete(
