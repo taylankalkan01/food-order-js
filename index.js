@@ -5,6 +5,7 @@ const helmet = require("helmet");
 const cors = require("cors");
 const { connectDB } = require("./databases/mongoDB");
 const AllRoutes = require("./routes/routes");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(compression());
 app.use(helmet());
 app.use(express.json());
 app.use(cors());
+app.use(cookieParser());
 
 //apis
 app.get("/", (req, res) => {
