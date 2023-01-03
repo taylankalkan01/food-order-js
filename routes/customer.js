@@ -1,15 +1,22 @@
 const router = require("express").Router();
 const customerControllers = require("../controllers/customer/index");
+const verifyToken = require("../middlewares/VerifyToken");
 
 router.post("/auth/customer/login", customerControllers.customerLogin);
 router.post("/auth/customer/register", customerControllers.customerRegister);
-router.post("/auth/customer/logout", customerControllers.customerLogout);
+router.get(
+	"/auth/customer/logout",
+	verifyToken,
+	customerControllers.customerLogout
+);
 router.put(
-	"/auth/customer/update-email",
+	"/auth/customer/update-email/:id",
+	verifyToken,
 	customerControllers.customerUpdateEmail
 );
 router.put(
-	"/auth/customer/update-password",
+	"/auth/customer/update-password/:id",
+	verifyToken,
 	customerControllers.customerUpdatePassword
 );
 router.delete(
