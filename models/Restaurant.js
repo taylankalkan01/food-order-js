@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const { Schema } = require("mongoose");
 const restaurantSchema = new mongoose.Schema(
   {
     name: {
@@ -23,7 +23,7 @@ const restaurantSchema = new mongoose.Schema(
     },
     foods: [
       {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "Food",
       },
     ],
